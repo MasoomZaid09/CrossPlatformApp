@@ -1,56 +1,91 @@
-Kotlin Multiplatform Clean Architecture App
-A cross-platform Kotlin Multiplatform project built with a single codebase for Android and iOS. It leverages shared UI using Jetpack Compose Multiplatform and follows the MVVM pattern with Clean Architecture principles.
+📱 KMM Cross-Platform App
+A scalable Kotlin Multiplatform Mobile (KMM) app designed using MVVM architecture and Clean Architecture principles. It shares both logic and UI across Android and iOS using Jetpack Compose Multiplatform. Networking is handled by Ktor, and Koin is used for Dependency Injection.
 
-Features
-Shared UI with Jetpack Compose Multiplatform
+🚀 Features
+Shared business logic and UI for Android & iOS
 
-MVVM architecture with a clear separation of concerns
+Fetch remote data using Ktor
 
-Dependency Injection using Koin
+Shared UI using Jetpack Compose (Multiplatform)
 
-Networking powered by Ktor
+MVVM + Clean Architecture
 
-Shared domain, data, and presentation logic between platforms
+Dependency injection with Koin
 
-SwiftUI interoperability on iOS
+Coroutine-based asynchronous operations
 
-Architecture Overview
-This project uses a modular Clean Architecture structure:
+🧱 Tech Stack
+Kotlin Multiplatform Mobile (KMM)
 
-UI Layer: Built with Compose Multiplatform and hosted in the shared module.
+Jetpack Compose Multiplatform
 
-Presentation Layer: Contains ViewModels and UI-related logic, shared across platforms.
+MVVM (Model-View-ViewModel)
 
-Domain Layer: Holds use cases and business rules.
+Clean Architecture
 
-Data Layer: Responsible for fetching data via repositories and remote sources.
+Ktor for network requests
 
-DI Layer: Manages dependency injection setup using Koin.
+Koin for Dependency Injection
 
-Project Modules
-shared: Contains all multiplatform logic including UI, domain, presentation, data, and DI.
+Coroutines for async operations
 
-androidApp: Android-specific entry point and platform code.
+StateFlow / LiveData for UI state
 
-iosApp: iOS-specific SwiftUI app integrated with shared logic.
+Kotlinx Serialization for parsing
 
-Requirements
-Android Studio Giraffe or newer
+📁 Package Structure
+bash
+Copy
+Edit
+com.example.kmmapp
+│
+├── shared/              
+│   ├── data/            # API services, DTOs, Repositories
+│   ├── domain/          # UseCases, Models, Repository Interfaces
+│   ├── presentation/    # Shared Compose UI, ViewModels
+│   ├── di/              # Koin modules
+│   └── utils/           # Helpers, constants, mappers, etc.
+│
+├── androidApp/          # Android-specific code
+└── iosApp/              # iOS-specific code (SwiftUI integration)
+🧪 Testing
+Unit tests for UseCases and ViewModels using Kotlin Test
 
-Xcode 15 or newer
+Optional: Mocking with MockK
 
-Kotlin Multiplatform Plugin enabled
+📦 API Used
+Demo REST API endpoint (you can replace with real backend)
 
-Running the App
-Android: Open the project in Android Studio and run the androidApp module.
+💡 How It Works
+ViewModel calls the UseCase to fetch data
 
-iOS: Open the iOS app workspace in Xcode, build, and run on a simulator or device.
+UseCase interacts with Repository (which uses Ktor client)
 
-Shared UI
-All UI components are written once using Compose Multiplatform and reused across Android and iOS, reducing duplication and ensuring design consistency.
+UI state is updated and rendered via shared Compose UI
 
-Contribution
-Issues, feature requests, and pull requests are welcome. If you’d like to contribute, feel free to fork the repository and open a PR.
+Logic and UI are reused across Android and iOS
 
-License
-This project is licensed under the MIT License.
+📌 Requirements
+Android Studio Giraffe or later
+
+Xcode 14+ (for iOS)
+
+Kotlin 1.9+
+
+Compose Multiplatform plugin
+
+Cocoapods installed (for iOS builds)
+
+Gradle 8+
+
+🛠 Setup
+bash
+Copy
+Edit
+# Clone the repo
+git clone https://github.com/yourusername/KMMCrossPlatformApp.git
+
+# Open in Android Studio for Android
+# Open iosApp in Xcode for iOS
+📄 License
+MIT License. Feel free to use, modify, and contribute.
