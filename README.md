@@ -1,91 +1,98 @@
-📱 KMM Cross-Platform App
-A scalable Kotlin Multiplatform Mobile (KMM) app designed using MVVM architecture and Clean Architecture principles. It shares both logic and UI across Android and iOS using Jetpack Compose Multiplatform. Networking is handled by Ktor, and Koin is used for Dependency Injection.
 
-🚀 Features
-Shared business logic and UI for Android & iOS
+# 📱 KMM Cross-Platform App
 
-Fetch remote data using Ktor
+A **Kotlin Multiplatform Mobile (KMM)** application with shared business logic and UI across **Android and iOS**. Built using modern tools and patterns like **MVVM**, **Clean Architecture**, **Ktor**, **Koin**, and **Jetpack Compose Multiplatform**, this app is scalable, testable, and production-ready.
 
-Shared UI using Jetpack Compose (Multiplatform)
+---
 
-MVVM + Clean Architecture
+## ✨ Highlights
 
-Dependency injection with Koin
+- 🌐 Shared UI with **Compose Multiplatform**
+- 📦 Shared business logic using **KMM**
+- 🧱 Clean Architecture layered structure
+- 🔄 API integration with **Ktor**
+- ⚙️ Dependency Injection via **Koin**
+- ⚡ Async programming using **Coroutines**
+- 🧪 Ready for unit testing
 
-Coroutine-based asynchronous operations
+---
 
-🧱 Tech Stack
-Kotlin Multiplatform Mobile (KMM)
+## 🧰 Tech Stack
 
-Jetpack Compose Multiplatform
+| Layer             | Tech Used                         |
+|------------------|------------------------------------|
+| Language          | Kotlin (Multiplatform)            |
+| UI                | Jetpack Compose Multiplatform     |
+| Architecture      | MVVM + Clean Architecture         |
+| Networking        | Ktor                              |
+| Dependency Injection | Koin                          |
+| State Handling    | StateFlow / LiveData              |
+| Async             | Kotlin Coroutines                 |
+| iOS UI Bridge     | SwiftUI                           |
 
-MVVM (Model-View-ViewModel)
+---
 
-Clean Architecture
+## 📂 Project Structure Overview
 
-Ktor for network requests
+```
+📁 shared/
+├── data/           → API services, DTOs, Repository impl
+├── domain/         → UseCases, Models, Interfaces
+├── presentation/   → Shared Compose UI, ViewModels
+├── di/             → Koin modules
+└── utils/          → Common helpers & constants
 
-Koin for Dependency Injection
+📁 androidApp/       → Android-specific code
+📁 iosApp/           → iOS-specific code (SwiftUI)
+```
 
-Coroutines for async operations
+---
 
-StateFlow / LiveData for UI state
+## 🔄 Data Flow
 
-Kotlinx Serialization for parsing
+1. UI triggers ViewModel action  
+2. ViewModel calls UseCase (from domain layer)  
+3. UseCase interacts with Repository  
+4. Repository fetches data from Ktor API  
+5. Result flows back → ViewModel → UI  
 
-📁 Package Structure
-bash
-Copy
-Edit
-com.example.kmmapp
-│
-├── shared/              
-│   ├── data/            # API services, DTOs, Repositories
-│   ├── domain/          # UseCases, Models, Repository Interfaces
-│   ├── presentation/    # Shared Compose UI, ViewModels
-│   ├── di/              # Koin modules
-│   └── utils/           # Helpers, constants, mappers, etc.
-│
-├── androidApp/          # Android-specific code
-└── iosApp/              # iOS-specific code (SwiftUI integration)
-🧪 Testing
-Unit tests for UseCases and ViewModels using Kotlin Test
+---
 
-Optional: Mocking with MockK
+## ⚙️ Requirements
 
-📦 API Used
-Demo REST API endpoint (you can replace with real backend)
+- ✅ Android Studio Giraffe or newer  
+- ✅ Xcode 14+ (for iOS build)  
+- ✅ Kotlin 1.9+  
+- ✅ Compose Multiplatform plugin  
+- ✅ Cocoapods (installed for iOS support)  
 
-💡 How It Works
-ViewModel calls the UseCase to fetch data
+---
 
-UseCase interacts with Repository (which uses Ktor client)
+## 🚀 Getting Started
 
-UI state is updated and rendered via shared Compose UI
+1. **Clone the repo:**
+   ```
+   git clone https://github.com/your-username/KMM-CrossPlatform-App.git
+   ```
 
-Logic and UI are reused across Android and iOS
+2. **Open in Android Studio** for Android development  
+3. **Navigate to iosApp/** and run `pod install`  
+4. **Open in Xcode** for iOS simulator testing  
 
-📌 Requirements
-Android Studio Giraffe or later
+---
 
-Xcode 14+ (for iOS)
+## ✅ TODO
 
-Kotlin 1.9+
+- [x] Compose UI in shared module  
+- [x] Ktor API integration  
+- [x] Koin DI setup  
+- [x] Shared ViewModel structure  
+- [ ] Add local database (e.g., SQLDelight)  
+- [ ] Add unit tests (Kotlin Test or MockK)  
 
-Compose Multiplatform plugin
+---
 
-Cocoapods installed (for iOS builds)
+## 📃 License
 
-Gradle 8+
-
-🛠 Setup
-bash
-Copy
-Edit
-# Clone the repo
-git clone https://github.com/yourusername/KMMCrossPlatformApp.git
-
-# Open in Android Studio for Android
-# Open iosApp in Xcode for iOS
-📄 License
-MIT License. Feel free to use, modify, and contribute.
+Licensed under the [MIT License](LICENSE).  
+Feel free to use, modify, and contribute to the project.
