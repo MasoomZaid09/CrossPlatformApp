@@ -1,0 +1,7 @@
+TEAM_ID=
+
+PRODUCT_NAME=logcat_ddhealthcare
+PRODUCT_BUNDLE_IDENTIFIER=org.logcat.healthcare.logcat_ddhealthcare$(TEAM_ID)
+
+CURRENT_PROJECT_VERSION=1
+MARKETING_VERSION=1.0
